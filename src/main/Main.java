@@ -1,5 +1,9 @@
 package main;
 
+import builderPattern.BeeHiveBuilder;
+import builderPattern.Hive;
+import builderPattern.HiveDirector;
+import builderPattern.RestfulHive;
 import decoratorPattern.Bee;
 import decoratorPattern.FastBee;
 import decoratorPattern.GreedyBee;
@@ -8,6 +12,21 @@ import decoratorPattern.StrongBee;
 public class Main {
 
     public static void main(String[] args) {
+        runBuilderPattern();
+
+    }
+    
+    public static void runBuilderPattern() {
+        HiveDirector director = new HiveDirector();
+        
+        BeeHiveBuilder restfulHiveBuilder = new RestfulHive();
+        director.makeHive(restfulHiveBuilder);
+        Hive sleepHive = restfulHiveBuilder.getHive();
+        
+        System.out.println(sleepHive);
+    }
+    
+    public static void runDecoratorPatten() {
         Bee myBee = new Bee();
         
         System.out.println("myBee\n-----------");
