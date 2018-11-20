@@ -1,12 +1,12 @@
 package builderPattern;
 
-public class RestfulHive extends BeeHiveBuilder {
+public class GreedyHive extends BeeHiveBuilder {
 
-    private Hive myHive = new Hive();
+private Hive myHive = new Hive();
     
-    private static final int INITIAL_SLEEP_ROOMS = 3;
-    private static final int INITIAL_SPAWNING_ROOMS = 2;
-    private static final int INITIAL_STORAGE_ROOMS = 1;
+    private static final int INITIAL_SLEEP_ROOMS = 2;
+    private static final int INITIAL_SPAWNING_ROOMS = 1;
+    private static final int INITIAL_STORAGE_ROOMS = 3;
 
     @Override
     public Hive getHive() {
@@ -36,5 +36,4 @@ public class RestfulHive extends BeeHiveBuilder {
         }
 
     }
-
 }

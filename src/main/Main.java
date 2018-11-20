@@ -1,6 +1,7 @@
 package main;
 
 import builderPattern.BeeHiveBuilder;
+import builderPattern.GreedyHive;
 import builderPattern.Hive;
 import builderPattern.HiveDirector;
 import builderPattern.RestfulHive;
@@ -24,6 +25,13 @@ public class Main {
         Hive sleepHive = restfulHiveBuilder.getHive();
         
         System.out.println(sleepHive);
+        System.out.println();
+        
+        BeeHiveBuilder greedyHiveBuilder = new GreedyHive();
+        director.makeHive(greedyHiveBuilder);
+        Hive greedyHive = greedyHiveBuilder.getHive();
+        
+        System.out.println(greedyHive);
     }
     
     public static void runDecoratorPatten() {

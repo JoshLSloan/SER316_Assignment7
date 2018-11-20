@@ -18,7 +18,7 @@ public class Hive {
     public String toString() {
         String ret = "";
         for (int i = 0; i < rooms.size(); i++) {
-            ret += rooms.get(i) + "\n";
+            ret += (i+1) + ") " + rooms.get(i) + "\n";
         }
         return ret;
     }
