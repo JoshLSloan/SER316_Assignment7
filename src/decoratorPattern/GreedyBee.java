@@ -2,7 +2,6 @@ package decoratorPattern;
 
 public class GreedyBee extends BeeDecoratorBase {
     
-    private int extraHarvest;
 
     public GreedyBee(BeeBase pBee) {
         super(pBee);
@@ -10,14 +9,7 @@ public class GreedyBee extends BeeDecoratorBase {
     
     @Override
     public int getHarvestSpeed() {
-        return super.getHarvestSpeed() + extraHarvest;
+        return super.getHarvestSpeed() + 5;
     }
 
-    public int getExtraHarvest() {
-        return extraHarvest;
-    }
-
-    public void setExtraHarvest(int extraHarvest) {
-        this.extraHarvest = extraHarvest;
-    }
 }

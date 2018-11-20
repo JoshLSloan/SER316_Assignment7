@@ -17,7 +17,6 @@ public class Main {
         System.out.println();
         
         StrongBee strongBee = new StrongBee(myBee);
-        strongBee.setExtraStrength(5);
         
         System.out.println("strongBee\n-----------");
         System.out.println("Bee strength: " + strongBee.getStrength()); 
@@ -26,7 +25,6 @@ public class Main {
         System.out.println();
         
         FastBee strongFastBee = new FastBee(strongBee);
-        strongFastBee.setExtraSpeed(1);
         
         System.out.println("strongFastBee\n-----------");
         System.out.println("Bee strength: " + strongFastBee.getStrength()); 
@@ -35,7 +33,6 @@ public class Main {
         System.out.println();
         
         GreedyBee strongFastGreedyBee = new GreedyBee(strongFastBee);
-        strongFastGreedyBee.setExtraHarvest(5);
         
         System.out.println("strongFastGreedyBee\n-----------");
         System.out.println("Bee strength: " + strongFastGreedyBee.getStrength()); 
@@ -44,7 +41,6 @@ public class Main {
         System.out.println();
         
         StrongBee anotherStrongBee = new StrongBee(new Bee());
-        anotherStrongBee.setExtraStrength(15);
         
         System.out.println("anotherStrongBee\n-----------");
         System.out.println("Bee strength: " + anotherStrongBee.getStrength()); 
@@ -53,12 +49,19 @@ public class Main {
         System.out.println();
         
         GreedyBee anotherStrongGreedyBee = new GreedyBee(anotherStrongBee);
-        anotherStrongGreedyBee.setExtraHarvest(10);
         
         System.out.println("anotherStrongGreedyBee\n-----------");
         System.out.println("Bee strength: " + anotherStrongGreedyBee.getStrength()); 
         System.out.println("Bee move speed: " + anotherStrongGreedyBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + anotherStrongGreedyBee.getHarvestSpeed());
+        System.out.println();
+        
+        GreedyBee testBee = new GreedyBee(new FastBee(new StrongBee(new Bee())));
+        
+        System.out.println("testBee\n-----------");
+        System.out.println("Bee strength: " + testBee.getStrength()); 
+        System.out.println("Bee move speed: " + testBee.getMoveSpeed());
+        System.out.println("Bee harvest speed: " + testBee.getHarvestSpeed());
         System.out.println();
     }
 

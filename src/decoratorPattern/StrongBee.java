@@ -1,8 +1,6 @@
 package decoratorPattern;
 
 public class StrongBee extends BeeDecoratorBase {
-    
-    private int extraStrength;
 
     public StrongBee(BeeBase pBee) {
         super(pBee);
@@ -10,14 +8,7 @@ public class StrongBee extends BeeDecoratorBase {
     
     @Override
     public int getStrength() {
-        return super.getStrength() + extraStrength;
+        return super.getStrength() + 5;
     }
-
-    public int getExtraStrength() {
-        return extraStrength;
-    }
-
-    public void setExtraStrength(int extraStrength) {
-        this.extraStrength = extraStrength;
-    }   
+ 
 }

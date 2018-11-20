@@ -1,8 +1,6 @@
 package decoratorPattern;
 
 public class FastBee extends BeeDecoratorBase {
-    
-    private int extraSpeed;
 
     public FastBee(BeeBase pBee) {
         super(pBee);
@@ -10,16 +8,7 @@ public class FastBee extends BeeDecoratorBase {
     
     @Override
     public int getMoveSpeed() {
-        return super.getMoveSpeed() + extraSpeed;
+        return super.getMoveSpeed() + 1;
     }
 
-    public int getExtraSpeed() {
-        return extraSpeed;
-    }
-
-    public void setExtraSpeed(int extraSpeed) {
-        this.extraSpeed = extraSpeed;
-    }
-    
-    
 }
