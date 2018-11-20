@@ -10,7 +10,7 @@ public class GreedyBee extends BeeDecoratorBase {
     
     @Override
     public int getHarvestSpeed() {
-        return super.getHarvestSpeed() + 5;
+        return super.getHarvestSpeed() + extraHarvest;
     }
 
     public int getExtraHarvest() {
