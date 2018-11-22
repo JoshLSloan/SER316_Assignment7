@@ -9,12 +9,44 @@ import decoratorPattern.Bee;
 import decoratorPattern.FastBee;
 import decoratorPattern.GreedyBee;
 import decoratorPattern.StrongBee;
+import singletonPattern.Apiary;
 
 public class Main {
 
     public static void main(String[] args) {
-        runBuilderPattern();
+        //runBuilderPattern();
+        runSingletonPattern();
 
+    }
+    
+    public static void runSingletonPattern() {
+        //Lets get an apiary
+        Apiary myApiary1 = Apiary.getApiary();
+        
+        //Now add some hives to that apiary
+        myApiary1.addHive(1);
+        myApiary1.addHive(2);
+        myApiary1.addHive(3);
+        
+        //Lets try and get a second apiary
+        Apiary myApiary2 = Apiary.getApiary();
+        
+        //And add different hives to it
+        myApiary2.addHive(4);
+        myApiary2.addHive(5);
+        myApiary2.addHive(6);
+        
+        //Now if we print out both Apiary references we see that they
+        //both contain the same hives
+        System.out.println("MyApiary1\n------------");
+        System.out.println(myApiary1.toString());
+        
+        System.out.println("MyApiary2\n------------");
+        System.out.println(myApiary2.toString());
+        
+        //And here we see that the references are to the same object
+        boolean equal = myApiary1 == myApiary2;
+        System.out.println("myApiary1 == myApiary2: " + equal);
     }
     
     public static void runBuilderPattern() {
