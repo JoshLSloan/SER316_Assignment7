@@ -1,4 +1,4 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public class Bee extends BeeBase {
 

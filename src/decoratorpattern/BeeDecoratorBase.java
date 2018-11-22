@@ -1,11 +1,11 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public abstract class BeeDecoratorBase extends BeeBase {
     
     private BeeBase bee;
     
-    public BeeDecoratorBase(BeeBase pBee) {
-        bee = pBee;
+    public BeeDecoratorBase(BeeBase parmBee) {
+        bee = parmBee;
     }
     
     @Override

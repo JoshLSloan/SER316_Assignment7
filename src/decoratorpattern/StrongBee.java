@@ -1,9 +1,9 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public class StrongBee extends BeeDecoratorBase {
 
-    public StrongBee(BeeBase pBee) {
-        super(pBee);
+    public StrongBee(BeeBase parmBee) {
+        super(parmBee);
     }
     
     @Override

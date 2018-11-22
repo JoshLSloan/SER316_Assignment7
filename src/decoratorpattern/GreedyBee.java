@@ -1,10 +1,10 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public class GreedyBee extends BeeDecoratorBase {
     
 
-    public GreedyBee(BeeBase pBee) {
-        super(pBee);
+    public GreedyBee(BeeBase parmBee) {
+        super(parmBee);
     }
     
     @Override

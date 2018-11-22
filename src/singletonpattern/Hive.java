@@ -1,4 +1,4 @@
-package singletonPattern;
+package singletonpattern;
 
 public class Hive {
 

@@ -1,9 +1,9 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public class FastBee extends BeeDecoratorBase {
 
-    public FastBee(BeeBase pBee) {
-        super(pBee);
+    public FastBee(BeeBase parmBee) {
+        super(parmBee);
     }
     
     @Override

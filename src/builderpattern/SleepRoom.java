@@ -1,4 +1,4 @@
-package builderPattern;
+package builderpattern;
 
 public class SleepRoom implements Room {
 

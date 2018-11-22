@@ -2,19 +2,18 @@ package test;
 
 import static org.junit.Assert.assertTrue;
 
+import builderpattern.BeeHiveBuilder;
+import builderpattern.GreedyHive;
+import builderpattern.Hive;
+import builderpattern.HiveDirector;
+import builderpattern.RestfulHive;
+import builderpattern.Room;
+import builderpattern.SleepRoom;
+import builderpattern.SpawningRoom;
+import builderpattern.StorageRoom;
+
 import java.util.ArrayList;
-
 import org.junit.Test;
-
-import builderPattern.BeeHiveBuilder;
-import builderPattern.GreedyHive;
-import builderPattern.Hive;
-import builderPattern.HiveDirector;
-import builderPattern.RestfulHive;
-import builderPattern.Room;
-import builderPattern.SleepRoom;
-import builderPattern.SpawningRoom;
-import builderPattern.StorageRoom;
 
 public class BuilderPatternTest {
     
@@ -52,7 +51,7 @@ public class BuilderPatternTest {
         
     }
     
-   /**
+    /**
     * Test that a GreedyHive that has been built has the correct number of rooms.
     */
     @Test

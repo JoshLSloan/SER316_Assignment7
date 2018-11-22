@@ -1,4 +1,4 @@
-package decoratorPattern;
+package decoratorpattern;
 
 public abstract class BeeBase {
     
@@ -9,9 +9,11 @@ public abstract class BeeBase {
     public int getStrength() {
         return strength;
     }
+    
     public int getMoveSpeed() {
         return moveSpeed;
     }
+    
     public int getHarvestSpeed() {
         return harvestSpeed;
     }

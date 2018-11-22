@@ -1,24 +1,31 @@
 package main;
 
-import builderPattern.BeeHiveBuilder;
-import builderPattern.GreedyHive;
-import builderPattern.Hive;
-import builderPattern.HiveDirector;
-import builderPattern.RestfulHive;
-import decoratorPattern.Bee;
-import decoratorPattern.FastBee;
-import decoratorPattern.GreedyBee;
-import decoratorPattern.StrongBee;
-import singletonPattern.Apiary;
+import builderpattern.BeeHiveBuilder;
+import builderpattern.GreedyHive;
+import builderpattern.Hive;
+import builderpattern.HiveDirector;
+import builderpattern.RestfulHive;
+import decoratorpattern.Bee;
+import decoratorpattern.FastBee;
+import decoratorpattern.GreedyBee;
+import decoratorpattern.StrongBee;
+import singletonpattern.Apiary;
 
 public class Main {
 
+    /**
+     * Runs examples showing off all patterns.
+     * @param args Not used.
+     */
     public static void main(String[] args) {
         //runBuilderPattern();
         runSingletonPattern();
 
     }
     
+    /**
+     * Runs a demonstration of the Singleton Pattern.
+     */
     public static void runSingletonPattern() {
         //Lets get an apiary
         Apiary myApiary1 = Apiary.getApiary();
@@ -49,6 +56,9 @@ public class Main {
         System.out.println("myApiary1 == myApiary2: " + equal);
     }
     
+    /**
+     * Runs a demonstration of the Builder Pattern.
+     */
     public static void runBuilderPattern() {
         HiveDirector director = new HiveDirector();
         
@@ -66,6 +76,9 @@ public class Main {
         System.out.println(greedyHive);
     }
     
+    /**
+     * Runs a demonstration of the Decorator Pattern.
+     */
     public static void runDecoratorPatten() {
         Bee myBee = new Bee();
         
