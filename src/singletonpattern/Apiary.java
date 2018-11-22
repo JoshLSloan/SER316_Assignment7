@@ -48,6 +48,11 @@ public class Apiary {
         
     }
     
+        
+    public ArrayList<Hive> getHives() {
+        return hives;
+    }
+
     @Override
     public String toString() {
         String ret = "";

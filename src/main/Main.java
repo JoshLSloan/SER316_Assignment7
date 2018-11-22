@@ -19,7 +19,8 @@ public class Main {
      */
     public static void main(String[] args) {
         //runBuilderPattern();
-        runSingletonPattern();
+        //runSingletonPattern();
+        runDecoratorPatten();
 
     }
     
@@ -60,19 +61,26 @@ public class Main {
      * Runs a demonstration of the Builder Pattern.
      */
     public static void runBuilderPattern() {
+        //Get a director
         HiveDirector director = new HiveDirector();
         
+        //Create a builder for a RestfulHive and use the director to build it
+        //and get the hive
         BeeHiveBuilder restfulHiveBuilder = new RestfulHive();
         director.makeHive(restfulHiveBuilder);
         Hive sleepHive = restfulHiveBuilder.getHive();
         
+        //Now we can see that the RestfulHive object has the expected number
+        //of each type of room
         System.out.println(sleepHive);
         System.out.println();
         
+        //Now we'll build a GreedyHive
         BeeHiveBuilder greedyHiveBuilder = new GreedyHive();
         director.makeHive(greedyHiveBuilder);
         Hive greedyHive = greedyHiveBuilder.getHive();
         
+        //And again see that we have the right number of rooms of each type
         System.out.println(greedyHive);
     }
     
