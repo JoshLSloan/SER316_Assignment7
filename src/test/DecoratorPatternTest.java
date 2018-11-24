@@ -1,17 +1,13 @@
 package test;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import decoratorpattern.Bee;
 import decoratorpattern.FastBee;
 import decoratorpattern.GreedyBee;
 import decoratorpattern.StrongBee;
+
+import org.junit.Test;
 
 /**
  * Tests the decorator pattern implementation.
