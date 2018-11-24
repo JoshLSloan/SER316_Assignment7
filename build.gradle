@@ -52,10 +52,17 @@ tasks.withType(Checkstyle) {
   reports {
     html.enabled = true
     xml.enabled = false
+    //html.destination rootProject.file("build/reports/checkstyle.html")
   }
 }
 checkstyle {
     toolVersion = "8.8"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'main.Main'
+    }
 }
 
 
