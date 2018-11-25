@@ -42,8 +42,10 @@ public class ApiaryPatternTest {
         myApiary2.addHive(5);
         myApiary2.addHive(6);
 
+        //Now check that both references are to the same object
         assertTrue(myApiary1 == myApiary2);
         
+        //And lets check that their lists of hives are the same
         ArrayList<Hive> hiveList1 = myApiary1.getHives();
         ArrayList<Hive> hiveList2 = myApiary2.getHives();
         

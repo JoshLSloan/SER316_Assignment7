@@ -9,6 +9,9 @@ import decoratorpattern.Bee;
 import decoratorpattern.FastBee;
 import decoratorpattern.GreedyBee;
 import decoratorpattern.StrongBee;
+import mediatorpattern.ApiaryColleague;
+import mediatorpattern.ConcreteMediator;
+import mediatorpattern.TickColleague;
 import singletonpattern.Apiary;
 
 public class Main {
@@ -20,8 +23,27 @@ public class Main {
     public static void main(String[] args) {
         //runBuilderPattern();
         //runSingletonPattern();
-        runDecoratorPatten();
+        //runDecoratorPatten();
+        runMediatorPattern();
 
+    }
+    
+    /**
+     * Runs a demonstration of the Mediator Pattern.
+     */
+    public static void runMediatorPattern() {
+        ConcreteMediator mediator = new ConcreteMediator();
+        
+        TickColleague ticker = new TickColleague(mediator);
+        ApiaryColleague apiary = new ApiaryColleague(mediator);
+        
+        mediator.setTickColleague(ticker);
+        mediator.setApiaryColleague(apiary);
+        
+        ticker.sendTick();
+        ticker.sendTick();
+        ticker.sendTick();        
+        
     }
     
     /**
