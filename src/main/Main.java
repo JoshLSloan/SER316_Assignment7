@@ -138,54 +138,68 @@ public class Main {
         System.out.println("-----------------");
         System.out.println("-----------------");
         
+        //Create a bee
         Bee myBee = new Bee();
         
+        //The bee has base stats
         System.out.println("myBee\n-----------");
         System.out.println("Bee strength: " + myBee.getStrength()); 
         System.out.println("Bee move speed: " + myBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + myBee.getHarvestSpeed());
         System.out.println();
         
+        //Decorate the bee with extra strength
         StrongBee strongBee = new StrongBee(myBee);
         
+        //And show it has that extra strength
         System.out.println("strongBee\n-----------");
         System.out.println("Bee strength: " + strongBee.getStrength()); 
         System.out.println("Bee move speed: " + strongBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + strongBee.getHarvestSpeed());
         System.out.println();
         
+        //Now add move speed
         FastBee strongFastBee = new FastBee(strongBee);
         
+        //And show it has both the extra move speed and strength
         System.out.println("strongFastBee\n-----------");
         System.out.println("Bee strength: " + strongFastBee.getStrength()); 
         System.out.println("Bee move speed: " + strongFastBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + strongFastBee.getHarvestSpeed());
         System.out.println();
         
+        //Now lets add extra harvest speed to the bee
         GreedyBee strongFastGreedyBee = new GreedyBee(strongFastBee);
         
+        //And show that it has all three decorators applied
         System.out.println("strongFastGreedyBee\n-----------");
         System.out.println("Bee strength: " + strongFastGreedyBee.getStrength()); 
         System.out.println("Bee move speed: " + strongFastGreedyBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + strongFastGreedyBee.getHarvestSpeed());
         System.out.println();
         
+        //We can create a strong bee in one line of code
         StrongBee anotherStrongBee = new StrongBee(new Bee());
         
+        //And show it has the right stats
         System.out.println("anotherStrongBee\n-----------");
         System.out.println("Bee strength: " + anotherStrongBee.getStrength()); 
         System.out.println("Bee move speed: " + anotherStrongBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + anotherStrongBee.getHarvestSpeed());
         System.out.println();
         
+        //And we can still add another decorator to it
         GreedyBee anotherStrongGreedyBee = new GreedyBee(anotherStrongBee);
         
+        //And print out its stats
         System.out.println("anotherStrongGreedyBee\n-----------");
         System.out.println("Bee strength: " + anotherStrongGreedyBee.getStrength()); 
         System.out.println("Bee move speed: " + anotherStrongGreedyBee.getMoveSpeed());
         System.out.println("Bee harvest speed: " + anotherStrongGreedyBee.getHarvestSpeed());
         System.out.println();
         
+        //Now we show we can create a bee with all three traits in one go with code that looks
+        //just like something we would do with input and buffered streams and so forth
         GreedyBee testBee = new GreedyBee(new FastBee(new StrongBee(new Bee())));
         
         System.out.println("testBee\n-----------");
