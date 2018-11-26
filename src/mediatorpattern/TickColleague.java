@@ -9,19 +9,22 @@ public class TickColleague extends ColleagueBase {
         this.ticks = 0;
     }
     
-    
-    public void runSimulation(int numberOfHives) {
-        System.out.println("Received numberOfHives: " + numberOfHives);
+   
+    /**
+     * Sends a message to the mediator to inform the apiary to tick again
+     * if the number of hives remaining is greater than 1.
+     * @param numberOfHives The number of hives in the apiary.
+     * @return True if the simulation should tick again, false otherwise.
+     */
+    public boolean sendTick(int numberOfHives) {
         if (numberOfHives > 1) {
-            ticks++;
+            this.ticks++;
             System.out.println("Starting tick: " + ticks);
-            //sendTick();
-        } else {
-            System.out.println("Hives are all gone, simulation done.");
+            mediator.tick(this);
+            return true;
         }
-    }
-    
-    public void sendTick() {
-        mediator.tick(this);
+        
+        System.out.println("Less than two hives remain. Ending simulation.");
+        return false;
     }
 }

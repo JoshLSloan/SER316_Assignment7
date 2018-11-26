@@ -21,9 +21,9 @@ public class Main {
      * @param args Not used.
      */
     public static void main(String[] args) {
-        //runBuilderPattern();
-        //runSingletonPattern();
-        //runDecoratorPatten();
+        runBuilderPattern();
+        runSingletonPattern();
+        runDecoratorPatten();
         runMediatorPattern();
 
     }
@@ -32,6 +32,9 @@ public class Main {
      * Runs a demonstration of the Mediator Pattern.
      */
     public static void runMediatorPattern() {
+        System.out.println("MEDIATOR PATTERN");
+        System.out.println("----------------");
+        System.out.println("----------------");
         ConcreteMediator mediator = new ConcreteMediator();
         
         TickColleague ticker = new TickColleague(mediator);
@@ -40,10 +43,10 @@ public class Main {
         mediator.setTickColleague(ticker);
         mediator.setApiaryColleague(apiary);
         
-        apiary.sendStart();
+        //apiary.sendStart();
 
         while (apiary.getNumberOfHives() > 1) {
-            ticker.sendTick();
+            ticker.sendTick(apiary.getNumberOfHives());
         }
         
     }
@@ -52,6 +55,9 @@ public class Main {
      * Runs a demonstration of the Singleton Pattern.
      */
     public static void runSingletonPattern() {
+        System.out.println("SINGLETON PATTERN");
+        System.out.println("-----------------");
+        System.out.println("-----------------");
         //Lets get an apiary
         Apiary myApiary1 = Apiary.getApiary();
         
@@ -85,6 +91,10 @@ public class Main {
      * Runs a demonstration of the Builder Pattern.
      */
     public static void runBuilderPattern() {
+        System.out.println("BUILDER PATTERN");
+        System.out.println("---------------");
+        System.out.println("---------------");
+        
         //Get a director
         HiveDirector director = new HiveDirector();
         
@@ -96,6 +106,8 @@ public class Main {
         
         //Now we can see that the RestfulHive object has the expected number
         //of each type of room
+        System.out.println("RESTFUL HIVE");
+        System.out.println("------------");
         System.out.println(sleepHive);
         System.out.println();
         
@@ -105,6 +117,8 @@ public class Main {
         Hive greedyHive = greedyHiveBuilder.getHive();
         
         //And again see that we have the right number of rooms of each type
+        System.out.println("GREEDY HIVE");
+        System.out.println("-----------");
         System.out.println(greedyHive);
     }
     
@@ -112,6 +126,10 @@ public class Main {
      * Runs a demonstration of the Decorator Pattern.
      */
     public static void runDecoratorPatten() {
+        System.out.println("DECORATOR PATTERN");
+        System.out.println("-----------------");
+        System.out.println("-----------------");
+        
         Bee myBee = new Bee();
         
         System.out.println("myBee\n-----------");

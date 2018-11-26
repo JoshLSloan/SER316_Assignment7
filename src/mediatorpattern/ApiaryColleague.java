@@ -40,7 +40,7 @@ public class ApiaryColleague extends ColleagueBase {
         
         hives.remove(0);
         System.out.println();
-        mediator.sendHives(this, hives.size());
+        //mediator.sendHives(this, hives.size());
 
     }
     

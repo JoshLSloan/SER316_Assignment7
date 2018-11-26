@@ -1,5 +1,13 @@
 package mediatorpattern;
 
+/**
+ * Mediates communication between a TickColleague and ApiaryColleague.
+ * Allows the tick colleague to send a message to the apiary to perform
+ * another tick of the simulation and the apiary to send status (that is
+ * the number of remaining hives) back to the tick colleague.
+ * @author Joshua Sloan
+ *
+ */
 public class ConcreteMediator extends MediatorBase {
 
     private TickColleague tickColleague;
@@ -18,22 +26,14 @@ public class ConcreteMediator extends MediatorBase {
     public void sendHives(ColleagueBase caller, int numberOfHives) {
         if (caller == apiaryColleague) {
             System.out.println("Sending numberOfHives: " + numberOfHives);
-            tickColleague.runSimulation(numberOfHives);
+            tickColleague.sendTick(numberOfHives);
         }
     }
     
-
-    public TickColleague getTickColleague() {
-        return tickColleague;
-    }
-
     public void setTickColleague(TickColleague tickColleague) {
         this.tickColleague = tickColleague;
     }
 
-    public ApiaryColleague getApiaryColleague() {
-        return apiaryColleague;
-    }
 
     public void setApiaryColleague(ApiaryColleague apiaryColleague) {
         this.apiaryColleague = apiaryColleague;
