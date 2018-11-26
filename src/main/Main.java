@@ -43,11 +43,19 @@ public class Main {
         mediator.setTickColleague(ticker);
         mediator.setApiaryColleague(apiary);
         
-        //apiary.sendStart();
+        System.out.println("Starting Demo");
+        System.out.println("Current Hives");
+        for (mediatorpattern.Hive hive : apiary.getHives()) {
+            System.out.println(hive);
+        }
+        System.out.println();
 
+        //Run ticks until only one hive remains
         while (apiary.getNumberOfHives() > 1) {
             ticker.sendTick(apiary.getNumberOfHives());
         }
+        //Trying to call a tick fails and displays a simulation over message.
+        ticker.sendTick(apiary.getNumberOfHives());
         
     }
     

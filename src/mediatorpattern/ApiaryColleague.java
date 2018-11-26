@@ -34,11 +34,12 @@ public class ApiaryColleague extends ColleagueBase {
     public void recieveTick() {
         //Do hive stuff
         System.out.println("Current Hives");
+        
+        hives.remove(0); //Well defined behavior on tick for demo purposes
+        
         for (Hive hive : hives) {
             System.out.println(hive);
         }
-        
-        hives.remove(0);
         System.out.println();
         //mediator.sendHives(this, hives.size());
 
@@ -47,4 +48,10 @@ public class ApiaryColleague extends ColleagueBase {
     public int getNumberOfHives() {
         return hives.size();
     }
+
+    public ArrayList<Hive> getHives() {
+        return hives;
+    }
+    
+    
 }
