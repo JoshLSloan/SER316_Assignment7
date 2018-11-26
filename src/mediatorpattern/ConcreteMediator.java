@@ -9,9 +9,19 @@ public class ConcreteMediator extends MediatorBase {
     public void tick(ColleagueBase caller) {
         
         if (caller == tickColleague) {
+            System.out.println("Invoking new tick");
             apiaryColleague.recieveTick();
         }
     }
+    
+    @Override
+    public void sendHives(ColleagueBase caller, int numberOfHives) {
+        if (caller == apiaryColleague) {
+            System.out.println("Sending numberOfHives: " + numberOfHives);
+            tickColleague.runSimulation(numberOfHives);
+        }
+    }
+    
 
     public TickColleague getTickColleague() {
         return tickColleague;

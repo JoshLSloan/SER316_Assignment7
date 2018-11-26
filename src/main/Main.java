@@ -35,14 +35,16 @@ public class Main {
         ConcreteMediator mediator = new ConcreteMediator();
         
         TickColleague ticker = new TickColleague(mediator);
-        ApiaryColleague apiary = new ApiaryColleague(mediator);
+        ApiaryColleague apiary = new ApiaryColleague(mediator, 5);
         
         mediator.setTickColleague(ticker);
         mediator.setApiaryColleague(apiary);
         
-        ticker.sendTick();
-        ticker.sendTick();
-        ticker.sendTick();        
+        apiary.sendStart();
+
+        while (apiary.getNumberOfHives() > 1) {
+            ticker.sendTick();
+        }
         
     }
     
